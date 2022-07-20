@@ -1,0 +1,100 @@
+.auth-container {
+  display: flex;
+  height: calc(100vh - 5rem);
+  gap: 4rem;
+  align-items: center;
+  justify-content: center;
+}
+
+/* left side */
+.auth-l {
+  display: flex;
+  position: relative;
+}
+
+img {
+  width: 15rem;
+  height: 15rem;
+}
+
+/* circle */
+.circle {
+  position: absolute;
+  width: 16rem;
+  height: 11rem;
+  background: var(--planCard);
+  filter: blur(5px);
+  border-radius: 50%;
+  top: 4rem;
+  z-index: -9;
+  transform: rotate(130deg);
+  animation: rotation 5s;
+}
+
+@keyframes rotation {
+  50% {
+    transform: rotate(100deg);
+  }
+}
+
+.infoInput {
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  padding: 0.5rem;
+  flex: 1;
+}
+
+.infoForm > div {
+  display: flex;
+  height: 2rem;
+  width: 90%;
+  margin: 0.7rem;
+  gap: 1rem;
+}
+
+.infoButton {
+  width: 6rem;
+  height: 2rem;
+  align-self: flex-end;
+}
+
+.authForm {
+  background-color: var(--cardColor);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.authForm > div {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+/* responsive */
+@media (max-width: 414px) {
+  .infoForm > div {
+    flex-direction: column;
+    height: 6rem;
+  }
+
+  .infoInput {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .auth-container {
+    flex-direction: column;
+  }
+
+  .infoForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .infoButton {
+    margin-top: 1rem;
+  }
+}

@@ -1,0 +1,114 @@
+.nav-container {
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-logo > h1 {
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list ul li {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+}
+
+.nav-list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list ul a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  z-index: 10;
+}
+
+.nav-list ul li {
+  position: relative;
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list ul li:hover {
+  background: #c27c0b51;
+}
+
+.nav-list ul ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 0;
+  z-index: 10;
+}
+
+.nav-list ul ul li {
+  float: none;
+  width: 150px;
+}
+
+.nav-list ul ul a {
+  line-height: 120%;
+  padding: 10px 15px;
+}
+
+.nav-list ul li:hover > ul {
+  display: block;
+}
+
+.nav-list > ul {
+  list-style: none;
+  display: flex;
+  font-size: 0.7rem;
+  gap: 0.5rem;
+}
+
+.nav-list ul li {
+  position: relative;
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list > ul > li:hover {
+  cursor: pointer;
+  background: #c27c0b51;
+}
+
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.nav-buttons > span {
+  font-size: 0.7rem;
+}
+
+.nav-buttons a {
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .nav-list {
+    display: none;
+  }
+}
