@@ -19,7 +19,7 @@ function App() {
         <Nav />
         <Routes>
           <Route path='auth' element={<Auth />} />
-          <Route path='/' element={<Home />} />
+          <Route path='/' index element={<Home />} />
           <Route path='create-notes' element={<CreateNotes />} />
           <Route path='homeworks' element={<Homeworks />} />
           <Route path='create-student' element={<CreateStudent />} />
