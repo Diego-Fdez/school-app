@@ -34,6 +34,7 @@ const HomeScreen = () => {
         showConfirmButton: false,
         timer: 1500,
       });
+      setLoading(false);
     }
   };
 
