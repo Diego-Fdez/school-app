@@ -59,6 +59,7 @@ const AuthScreen = () => {
         showConfirmButton: false,
         timer: 1500,
       });
+      setLoading(false);
     }
   };
 
