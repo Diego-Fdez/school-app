@@ -1,0 +1,89 @@
+.panel {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.panel-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: auto;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.panel-card {
+  display: flex;
+  position: relative;
+  min-width: 8rem;
+  min-height: 12rem;
+  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2),
+    inset -5px -5px 15px rgba(255, 255, 255, 0.1),
+    5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  margin: 30px;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-bottom: 0.7rem;
+}
+
+.info {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: #2a2b2f;
+  width: 90%;
+  height: 80%;
+  border-radius: 15px;
+  gap: 0.5rem;
+}
+
+.info::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.info > img {
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  margin-top: 0.5rem;
+  object-fit: cover;
+  top: -1rem;
+}
+
+.info > h4 {
+  position: absolute;
+  top: 4rem;
+  font-size: 0.8rem;
+}
+
+.info > button {
+  position: absolute;
+  top: 7rem;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  .panel {
+    margin-top: 1rem;
+  }
+
+  .panel-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

@@ -6,6 +6,8 @@ import CreateNotes from './pages/CreateNotes';
 import Homeworks from './pages/Homeworks';
 import Assists from './pages/Assists';
 import CreateStudent from './pages/CreateStudent';
+import Panel from './pages/Panel';
+import QtResByStudent from './pages/QtResByStudent';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 
 function App() {
@@ -22,6 +24,11 @@ function App() {
           <Route path='homeworks' element={<Homeworks />} />
           <Route path='create-student' element={<CreateStudent />} />
           <Route path='assists' element={<Assists />} />
+          <Route path='panel' element={<Panel />} />
+          <Route
+            path='results-student/:studentId'
+            element={<QtResByStudent />}
+          />
         </Routes>
       </BrowserRouter>
     </div>

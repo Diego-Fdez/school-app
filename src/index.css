@@ -1,5 +1,5 @@
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   box-sizing: border-box;
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -28,12 +28,12 @@ a:hover {
 
 button {
   border-radius: 8px;
-  border: none;
+  border-color: transparent;
   padding: 0.4rem 0.8rem;
   font-size: 0.7rem;
   font-weight: 500;
   font-family: inherit;
-  background: var(--planCard);
+  background: var(--orange);
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -50,4 +50,12 @@ button:hover {
   border-radius: 50%;
   filter: blur(150px);
   z-index: -9;
+}
+
+.text-error {
+  display: block;
+  color: red;
+  font-size: 12px;
+  align-self: flex-end;
+  margin-right: 5px;
 }

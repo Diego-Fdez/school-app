@@ -1,0 +1,94 @@
+.result {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.qtRes-container {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.result-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: auto;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.result-card {
+  display: flex;
+  position: relative;
+  min-width: 20rem;
+  min-height: 27rem;
+  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2),
+    inset -5px -5px 15px rgba(255, 255, 255, 0.1),
+    5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  margin: 30px;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-bottom: 0.7rem;
+}
+
+.result-wrapper {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: center;
+  background: #2a2b2f;
+  width: 90%;
+  height: 80%;
+  border-radius: 15px;
+  gap: 0.5rem;
+}
+
+.result-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.result-wrapper > h4 {
+  align-self: center;
+}
+
+.result-wrapper > h4 > span {
+  margin-left: 0.3rem;
+}
+
+.result-wrapper > div {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-left: 1rem;
+}
+
+.result-wrapper > div > span:nth-child(1) {
+  color: var(--orange);
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .result {
+    margin-top: 1rem;
+  }
+
+  .result-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
