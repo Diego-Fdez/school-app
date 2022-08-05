@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { teacherInfo } from '../../slice/basketSlice';
 import axiosClient from '../../app/axiosClient';
+import { getError } from '../../app/error';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
@@ -55,7 +56,7 @@ const AuthScreen = () => {
       Swal.fire({
         position: 'top-end',
         icon: 'error',
-        title: `${error.response.data.message}`,
+        title: `${getError(error)}`,
         showConfirmButton: false,
         timer: 1500,
       });
@@ -197,7 +198,7 @@ const AuthScreen = () => {
               </div>
               <div>
                 <span
-                  style={{ fontSize: '12px', cursor: 'pointer' }}
+                  style={{ fontSize: '0.9rem', cursor: 'pointer' }}
                   onClick={() => {
                     setIsSignUp((prev) => !prev);
                   }}

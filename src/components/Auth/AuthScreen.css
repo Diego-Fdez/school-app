@@ -75,7 +75,6 @@ img {
 @media (max-width: 414px) {
   .infoForm > div {
     flex-direction: column;
-    height: 6rem;
   }
 
   .infoInput {

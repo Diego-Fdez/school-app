@@ -1,0 +1,21 @@
+.modal > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.modal > div > svg {
+  width: 1rem;
+  height: 1.1rem;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  background-color: var(--orange);
+  transition: all 0.2s ease-in;
+}
+
+.modal > div > svg:hover {
+  cursor: pointer;
+  background: transparent;
+  border: 2px solid var(--orange);
+}

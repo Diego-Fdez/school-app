@@ -10,6 +10,7 @@
   mix-blend-mode: overlay;
   min-height: 100vh;
   position: relative;
+  overflow-y: auto;
 }
 
 .b-1 {

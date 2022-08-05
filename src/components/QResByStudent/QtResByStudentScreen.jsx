@@ -2,15 +2,17 @@ import './QtResByStudent.css';
 import QtResTable from './QtResTable';
 import Loader from '../Loader/Loader';
 import axiosClient from '../../app/axiosClient';
+import { getError } from '../../app/error';
 import Swal from 'sweetalert2';
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 const QtResByStudentScreen = () => {
   const [loading, setLoading] = useState(false);
   const [student, setStudent] = useState([]);
   const params = useParams();
-  console.log(params.studentId);
+  const navigate = useNavigate();
+
   // function that looks for a student in the DB
   const getResult = async () => {
     try {
@@ -19,14 +21,17 @@ const QtResByStudentScreen = () => {
       const result = await axiosClient(`qt-results/${params.studentId}`);
       setLoading(false);
       setStudent(result.data);
+      console.log(student);
     } catch (error) {
       Swal.fire({
         position: 'top-end',
         icon: 'error',
-        title: `${error.response.data.message}`,
+        title: `${getError(error)}}`,
         showConfirmButton: false,
         timer: 1500,
       });
+      setLoading(false);
+      navigate('/');
     }
   };
 

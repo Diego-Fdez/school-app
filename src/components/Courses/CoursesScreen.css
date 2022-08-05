@@ -1,0 +1,133 @@
+/* Styling the courses-container div. */
+.courses-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 2rem;
+  width: 75%;
+  align-items: center;
+  justify-content: center;
+}
+
+.courses-container > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  padding: 1rem;
+}
+
+.courses-container > div > svg {
+  width: 1.3rem;
+  height: 1.1rem;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  background-color: var(--orange);
+  transition: all 0.2s ease-in;
+}
+
+.courses-container > div > svg:hover {
+  cursor: pointer;
+  background: transparent;
+  border: 2px solid var(--orange);
+}
+
+/* Disabling the pointer events. */
+.disabled {
+  pointer-events: none;
+}
+
+/* Styling the button in the form. */
+form button {
+  margin-top: 1rem;
+}
+
+/* Styling the fieldset element. */
+fieldset {
+  padding: 1.5rem 3rem;
+  border-radius: 1rem;
+  color: rgba(99, 100, 102, 0.899);
+  border-color: var(--orange);
+}
+
+.table-courses {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 60%;
+  background-color: #2a2b2f;
+  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2),
+    inset -5px -5px 15px rgba(255, 255, 255, 0.1),
+    5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+}
+
+.courses-details {
+  position: relative;
+  align-items: center;
+  width: 100%;
+  justify-content: space-around;
+  border-bottom: 1px solid #fff;
+  gap: 1rem;
+}
+
+.courses-details > p {
+  flex: 1;
+  margin: 1rem;
+}
+
+.courses-details > p > span {
+  margin-left: 0.5rem;
+  font-weight: bold;
+  color: rgb(171, 120, 24);
+}
+
+.courses-details > div {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  top: 1.5rem;
+  right: 1.5rem;
+}
+
+.courses-details > div > svg {
+  width: 2rem;
+  height: 2rem;
+  color: var(--orange);
+}
+
+.courses-details > div > svg:hover {
+  cursor: pointer;
+  color: #fff;
+}
+
+.courses-modal {
+  width: 17rem;
+  height: 10rem;
+}
+
+.courses-modal > h1 {
+  margin-top: 2rem;
+}
+
+.courses-modal > div > input {
+  height: 1.5rem;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  .courses-container {
+    width: 75%;
+  }
+
+  .table-courses {
+    width: 100%;
+  }
+
+  .courses-details > div {
+    top: 2.8rem;
+    right: 1rem;
+  }
+}

@@ -3,11 +3,11 @@ import Nav from './components/NavBar/Nav';
 import Auth from './pages/Auth';
 import Home from './pages/Home';
 import CreateNotes from './pages/CreateNotes';
-import Homeworks from './pages/Homeworks';
 import Assists from './pages/Assists';
 import CreateStudent from './pages/CreateStudent';
 import Panel from './pages/Panel';
 import QtResByStudent from './pages/QtResByStudent';
+import Courses from './pages/Courses';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 
 function App() {
@@ -18,11 +18,11 @@ function App() {
       <BrowserRouter>
         <Nav />
         <Routes>
-          <Route path='auth' element={<Auth />} />
           <Route path='/' index element={<Home />} />
+          <Route path='auth' element={<Auth />} />
           <Route path='create-notes' element={<CreateNotes />} />
-          <Route path='homeworks' element={<Homeworks />} />
           <Route path='create-student' element={<CreateStudent />} />
+          <Route path='courses' element={<Courses />} />
           <Route path='assists' element={<Assists />} />
           <Route path='panel' element={<Panel />} />
           <Route

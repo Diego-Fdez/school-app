@@ -29,10 +29,10 @@ const Nav = () => {
         <div className='nav-buttons'>
           <span>
             {/* if a user logs in, the name is displayed */}
-            {user.length === 0 ? '' : `Hi, ${user[0]?.userInfo.userName}`}
+            {user?.length === 0 ? '' : `Hi, ${user[0]?.userInfo.userName}`}
           </span>
           {/* if a user logs in, logout button is shown */}
-          {user.length === 0 ? null : (
+          {user?.length === 0 ? null : (
             <button>
               <NavLink to='auth'>Log out</NavLink>
             </button>

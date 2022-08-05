@@ -1,61 +1,126 @@
 import './CreateStudentScreen.css';
+import { useForm } from 'react-hook-form';
 
-const CreateStudentScreen = () => {
+const CreateStudentScreen = ({ createStudent }) => {
+  // the form hook variables are declared
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+  } = useForm();
+
+  //function that obtains the data of the child
+  const submitHandler = ({
+    studentId,
+    studentName,
+    studentFirstName,
+    studentLastName,
+    contact,
+    observations,
+  }) => {
+    createStudent({
+      studentId,
+      studentName,
+      studentFirstName,
+      studentLastName,
+      contact,
+      observations,
+    });
+  };
+
   return (
     <div className='student-container'>
-      <form action='' className='infoForm authForm'>
-        <h1>Ingrese un nuevo estudiante</h1>
+      <form
+        action=''
+        className='infoForm authForm'
+        onSubmit={handleSubmit(submitHandler)}
+      >
+        <h1>Enter a new student</h1>
         <div>
           <input
             type='number'
-            placeholder='Cédula'
+            placeholder='Identification Number'
             className='infoInput'
-            name='userId'
+            name='studentId'
+            id='studentId'
+            autoFocus
+            {...register('studentId', {
+              required: 'Please enter the student ID',
+            })}
           />
+          {/* react hook forms errors */}
+          {errors.studentId && (
+            <span className='text-error'>{errors.studentId.message}</span>
+          )}
           <input
             type='text'
-            placeholder='Nombre'
+            placeholder='Student Name'
             className='infoInput'
-            name='userName'
+            name='studentName'
+            id='studentName'
+            {...register('studentName', {
+              required: 'Please enter the student name',
+            })}
           />
+          {/* react hook forms errors */}
+          {errors.studentName && (
+            <span className='text-error'>{errors.studentName.message}</span>
+          )}
         </div>
         <div>
           <input
             type='text'
-            placeholder='Primer Apellido'
+            placeholder='First Name'
             className='infoInput'
-            name='firstName'
+            name='studentFirstName'
+            id='studentFirstName'
+            {...register('studentFirstName', {
+              required: 'Please enter the first name',
+            })}
           />
+          {/* react hook forms errors */}
+          {errors.studentFirstName && (
+            <span className='text-error'>
+              {errors.studentFirstName.message}
+            </span>
+          )}
           <input
             type='text'
-            placeholder='Segundo Apellido'
+            placeholder='Last Name'
             className='infoInput'
-            name='lastName'
+            name='studentLastName'
+            id='studentLastName'
+            {...register('studentLastName', {
+              required: 'Please enter the last name',
+            })}
           />
+          {/* react hook forms errors */}
+          {errors.studentLastName && (
+            <span className='text-error'>{errors.studentLastName.message}</span>
+          )}
         </div>
         <div>
-          <select name='grade' id='' className='infoInput'>
-            <option value=''>1er Grado</option>
-            <option value=''>2do Grado</option>
-            <option value=''>3er Grado</option>
-          </select>
           <input
             type='text'
             className='infoInput'
-            placeholder='Contacto'
+            placeholder='Contact'
             name='contact'
+            id='contact'
+            {...register('contact')}
           />
         </div>
         <div>
           <textarea
             type='number'
-            placeholder='Observaciones'
+            placeholder='Observations'
             className='infoInput'
-            name='desc'
+            name='observations'
+            id='observations'
+            {...register('observations')}
           />
         </div>
         <button className='infoButton h-button' type='submit'>
-          Guardar
+          Save
         </button>
       </form>
     </div>
