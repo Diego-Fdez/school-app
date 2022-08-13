@@ -1,26 +1,24 @@
-import './HomeScreen.css';
-import { useSelector, useDispatch } from 'react-redux';
-import {
-  selectStudent,
-  selectUser,
-  removeTeacher,
-} from '../../slice/basketSlice';
 import { getError } from '../../app/error';
 import axiosClient from '../../app/axiosClient';
-import { Link } from 'react-router-dom';
+import {
+  selectTeacher,
+  selectUser,
+  deleteCourse,
+} from '../../slice/basketSlice';
+import { useSelector, useDispatch } from 'react-redux';
 import { UilTimesCircle } from '@iconscout/react-unicons';
 import Swal from 'sweetalert2';
 
-const TableScreen = () => {
+const TableTeacher = () => {
   const dispatch = useDispatch();
-  const [student] = useSelector(selectStudent);
+  const [teacher] = useSelector(selectTeacher);
   const user = useSelector(selectUser);
 
   /**
-   * If the user confirms the delete, then call the handleSubmit function with the id of the teacher to
+   * If the user confirms the delete, then call the handleSubmit function with the id of the course to
    * delete.
    */
-  const confirmDeleteTeacher = async (id) => {
+  const confirmDeleteCourse = async (id) => {
     Swal.fire({
       title: 'Are you sure?',
       text: "You won't be able to revert this!",
@@ -37,8 +35,9 @@ const TableScreen = () => {
   };
 
   /**
-   * I'm trying to delete a teacher from the database using the id of the student.
-   * @returns The id of the student that was deleted.
+   * I'm trying to delete a course from the database, but I'm getting an error.
+   * @returns The course is being deleted from the database and the course is being deleted from the
+   * state.
    */
   const handleSubmit = async (id) => {
     try {
@@ -54,12 +53,12 @@ const TableScreen = () => {
         },
       };
       const res = await axiosClient.put(
-        `student/delete/${student._id}`,
+        `auth/delete/${teacher._id}`,
         { id },
         configToken
       );
       Swal.fire('Deleted!', `${res.data}`, 'success');
-      dispatch(removeTeacher(id));
+      dispatch(deleteCourse(id));
     } catch (error) {
       Swal.fire({
         position: 'top-end',
@@ -77,27 +76,21 @@ const TableScreen = () => {
         <div className='card'>
           <div className='box'>
             <div className='content'>
-              <h2>{student?.studentId}</h2>
-              <h3>{`${student?.studentName} ${student?.studentFirstName} ${student?.studentLastName}`}</h3>
-              <p>
-                Contact: <span>{student?.contact}</span>
-              </p>
-              <p>Assigned Teachers:</p>
-              {student?.teachers?.map((teacher) => (
-                <span key={teacher?._id}>
-                  {`${teacher?.userName} ${teacher?.firstName}`}{' '}
+              <h3>{`${teacher?.userName} ${teacher?.firstName}`}</h3>
+              <p>{teacher?.email}</p>
+              <p>Assigned Courses:</p>
+              {teacher?.courses?.map((course) => (
+                <span key={course?._id}>
+                  {`${course?.desc}`}{' '}
                   {user[0]?.userInfo.isAdmin ? (
                     <UilTimesCircle
-                      onClick={() => confirmDeleteTeacher(teacher?._id)}
+                      onClick={() => confirmDeleteCourse(course?._id)}
                     />
                   ) : (
                     ''
                   )}
                 </span>
               ))}
-              <div>
-                <Link to={`results-student/${student._id}`}>See grades</Link>
-              </div>
             </div>
           </div>
         </div>
@@ -106,4 +99,4 @@ const TableScreen = () => {
   );
 };
 
-export default TableScreen;
+export default TableTeacher;

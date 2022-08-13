@@ -5,15 +5,15 @@ const AssistsTable = ({ userName, assists, late }) => {
     <>
       <div className='assists-table'>
         <div className='assists-name'>
-          <p>Nombre</p>
+          <p>Name</p>
           <p>{userName}</p>
         </div>
         <div className='assists-present'>
-          <p>Presente</p>
+          <p>Present</p>
           <input value={assists} type='checkbox' />
         </div>
         <div className='assists-late'>
-          <p>Tarde</p>
+          <p>Late</p>
           <input value={late} type='checkbox' />
         </div>
       </div>

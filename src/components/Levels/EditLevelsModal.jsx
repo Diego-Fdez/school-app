@@ -1,23 +1,16 @@
-import './CoursesScreen.css';
 import axiosClient from '../../app/axiosClient';
-import { editCourse, selectUser } from '../../slice/basketSlice';
+import { selectUser, editLevel } from '../../slice/basketSlice';
 import { getError } from '../../app/error';
 import { useDispatch, useSelector } from 'react-redux';
 import Swal from 'sweetalert2';
 
-const EditCoursesModal = ({
-  openModal,
-  setOpenModal,
-  id,
-  desc,
-  setSelectDesc,
-}) => {
-  const dispatch = useDispatch();
+const EditLevelsModal = ({ show, setShow, id, setSelectDesc, desc }) => {
   const user = useSelector(selectUser);
+  const dispatch = useDispatch();
 
   /**
-   * It's a function that sends a request to the server to update the course description.
-   * @returns The result is an object with the following structure:"
+   * It's a function that sends a request to the server to update the data.
+   * @returns The result is an object with the following structure:
    */
   const handleSubmit = async () => {
     //token validation
@@ -33,12 +26,12 @@ const EditCoursesModal = ({
     };
     try {
       const result = await axiosClient.put(
-        `course/${id}`,
+        `levels/${id}`,
         { desc },
         configToken
       );
-      setOpenModal(false);
-      dispatch(editCourse(result?.data.data));
+      setShow(false);
+      dispatch(editLevel(result?.data.data));
 
       Swal.fire({
         position: 'top-end',
@@ -66,19 +59,19 @@ const EditCoursesModal = ({
         id='m1-o'
         style={{
           background: 'transparent',
-          display: openModal ? 'flex' : 'none',
+          display: show ? 'flex' : 'none',
         }}
       >
         <div className='modal courses-modal'>
-          <h1>Edit the selected course</h1>
+          <h1>Edit the selected level</h1>
 
-          <a className='link-2' onClick={() => setOpenModal(!openModal)}></a>
+          <a className='link-2' onClick={() => setShow(!show)}></a>
           <div>
             <input
               type='text'
               id='desc'
               name='desc'
-              placeholder='Course name'
+              placeholder='Level description'
               defaultValue={desc}
               onChange={(e) => setSelectDesc(e.target.value)}
             />
@@ -90,4 +83,4 @@ const EditCoursesModal = ({
   );
 };
 
-export default EditCoursesModal;
+export default EditLevelsModal;

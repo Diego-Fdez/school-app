@@ -1,0 +1,30 @@
+.result-message {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+h3 {
+  color: rgba(195, 138, 34, 0.981);
+  font-weight: bold;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  .register-result-form {
+    text-align: center;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .register-result-form > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .register-result-form > div:nth-child(6) {
+    flex-direction: row;
+    margin-top: -1rem;
+  }
+}

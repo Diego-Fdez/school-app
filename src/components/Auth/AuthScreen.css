@@ -93,6 +93,14 @@ img {
     align-items: center;
     justify-content: center;
   }
+
+  .infoForm > h3 {
+    margin-bottom: 1.3rem;
+  }
+
+  .infoForm > div {
+    margin-bottom: 1.7rem;
+  }
   .infoButton {
     margin-top: 1rem;
   }

@@ -1,11 +1,18 @@
 import './Nav.css';
-import { Link, NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { selectUser } from '../../slice/basketSlice';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { selectUser, isLogout } from '../../slice/basketSlice';
 
 const Nav = () => {
   // the redux user is used
   const user = useSelector(selectUser);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const hasLogout = async () => {
+    dispatch(isLogout());
+    navigate('/auth');
+  };
 
   return (
     <nav>
@@ -33,9 +40,7 @@ const Nav = () => {
           </span>
           {/* if a user logs in, logout button is shown */}
           {user?.length === 0 ? null : (
-            <button>
-              <NavLink to='auth'>Log out</NavLink>
-            </button>
+            <button onClick={() => hasLogout()}>Log out</button>
           )}
         </div>
       </div>

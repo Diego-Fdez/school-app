@@ -8,14 +8,13 @@ import { UilSearch } from '@iconscout/react-unicons';
 import resultImage from '../../assets/undraw_Result.png';
 import axiosClient from '../../app/axiosClient';
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   studentInfo,
   selectStudent,
   selectUser,
 } from '../../slice/basketSlice';
 import Swal from 'sweetalert2';
-import { useSelector } from 'react-redux';
 
 const HomeScreen = () => {
   const dispatch = useDispatch();

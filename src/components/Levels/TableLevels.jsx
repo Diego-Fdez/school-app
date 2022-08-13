@@ -1,12 +1,12 @@
-import './CoursesScreen.css';
-import { selectCourse } from '../../slice/basketSlice';
-import EditCoursesModal from './EditCoursesModal';
+import './LevelScreen.css';
+import EditLevelsModal from './EditLevelsModal';
+import { selectLevel } from '../../slice/basketSlice';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
 
-const TableCourses = () => {
-  const [courses] = useSelector(selectCourse);
-  const [openModal, setOpenModal] = useState(false);
+const TableLevels = () => {
+  const [levels] = useSelector(selectLevel);
+  const [show, setShow] = useState(false);
   const [selectDesc, setSelectDesc] = useState('');
   const [selectId, setSelectId] = useState('');
 
@@ -21,20 +21,20 @@ const TableCourses = () => {
 
   return (
     <div className='table-courses'>
-      <h2>List of all Courses</h2>
-      {courses?.map((courseDetails) => (
-        <div className='courses-details' key={courseDetails?._id}>
+      <h2>List of all Levels</h2>
+      {levels?.map((levelDetails) => (
+        <div className='courses-details' key={levelDetails?._id}>
           <p>
-            ID:<span>{courseDetails?._id}</span>
+            ID:<span>{levelDetails?._id}</span>
           </p>
           <p>
-            Name:<span>{courseDetails?.desc}</span>
+            Name:<span>{levelDetails?.desc}</span>
           </p>
           <div>
             <button
               onClick={() => {
-                actions({ id: courseDetails?._id, desc: courseDetails?.desc }),
-                  setOpenModal(!openModal);
+                actions({ id: levelDetails?._id, desc: levelDetails?.desc }),
+                  setShow(!show);
               }}
             >
               Edit
@@ -42,9 +42,9 @@ const TableCourses = () => {
           </div>
         </div>
       ))}
-      <EditCoursesModal
-        openModal={openModal}
-        setOpenModal={setOpenModal}
+      <EditLevelsModal
+        show={show}
+        setShow={setShow}
         id={selectId}
         desc={selectDesc}
         setSelectDesc={setSelectDesc}
@@ -54,4 +54,4 @@ const TableCourses = () => {
   );
 };
 
-export default TableCourses;
+export default TableLevels;

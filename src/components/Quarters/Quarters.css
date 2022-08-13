@@ -1,0 +1,17 @@
+.quarter-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 2rem;
+  width: 75%;
+  align-items: center;
+  justify-content: center;
+}
+
+.quarter-container > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  padding: 1rem;
+}

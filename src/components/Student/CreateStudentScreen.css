@@ -5,3 +5,22 @@
   margin: 0 auto;
   width: 75%;
 }
+
+/* responsive */
+@media (max-width: 768px) {
+  .create-student-form > h1 {
+    margin-top: 1rem;
+  }
+
+  .create-student-form {
+    gap: 2rem;
+  }
+
+  .create-student-form > div:nth-child(5) {
+    margin-top: -2rem;
+  }
+
+  .create-student-form > button {
+    margin-top: -2rem;
+  }
+}

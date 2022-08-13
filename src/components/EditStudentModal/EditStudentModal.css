@@ -26,8 +26,6 @@ a:focus {
   padding: 4rem 2rem;
   border-radius: 0.8rem;
   color: var(--light);
-  /* width: 70%;
-  height: 30rem; */
   background: #2a2b2f;
   box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2),
     inset -5px -5px 15px rgba(255, 255, 255, 0.1),
@@ -77,4 +75,29 @@ a:focus {
 .link-2:hover,
 .link-2:focus {
   background: var(--orange);
+}
+
+.editStudent-form {
+  width: 100%;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  .editStudent-form > h1 {
+    margin-top: 5rem;
+  }
+  .editStudent-form {
+    height: 30rem;
+  }
+  .editStudent-form {
+    gap: 1.3rem;
+  }
+
+  .textarea {
+    margin-top: -2.7rem;
+  }
+
+  .editStudent-form > button {
+    margin-top: -2rem;
+  }
 }

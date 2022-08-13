@@ -87,20 +87,20 @@ const EditStudentModal = ({ display, setDisplay }) => {
       ) : (
         <div className='dialog-container'>
           <div
-            className='modal-container'
+            className='modal-container '
             id='m1-o'
             style={{
               background: 'transparent',
               display: display ? 'flex' : 'none',
             }}
           >
-            <div className='modal'>
+            <div className='modal modal-student'>
               {student?._id === '' ? (
                 <h1>You must first enter a student ID</h1>
               ) : (
                 <form
                   onSubmit={handleSubmit(submitHandler)}
-                  className='infoForm authForm'
+                  className='infoForm editStudent-form'
                 >
                   <h1>Edit student</h1>
                   <div>
@@ -191,7 +191,7 @@ const EditStudentModal = ({ display, setDisplay }) => {
                     <textarea
                       type='number'
                       placeholder='Observations'
-                      className='infoInput'
+                      className='infoInput textarea'
                       name='observations'
                       id='observations'
                       {...register('observations')}

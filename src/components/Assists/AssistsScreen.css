@@ -26,7 +26,7 @@
 .assists-table {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  background-color: var(--gray);
+  background-color: #2a2b2f;
   gap: 1rem;
   align-items: center;
   justify-content: space-between;
@@ -51,4 +51,5 @@
 .assists-name > p:nth-child(2) {
   font-size: 0.75rem;
   font-weight: normal;
+  color: #ccc;
 }

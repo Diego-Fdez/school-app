@@ -1,0 +1,9 @@
+.teacher-actions {
+  display: flex;
+  margin: 0 auto;
+  margin-top: 1rem;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  gap: 0.7rem;
+}

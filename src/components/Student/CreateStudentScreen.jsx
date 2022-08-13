@@ -32,7 +32,7 @@ const CreateStudentScreen = ({ createStudent }) => {
     <div className='student-container'>
       <form
         action=''
-        className='infoForm authForm'
+        className='infoForm create-student-form'
         onSubmit={handleSubmit(submitHandler)}
       >
         <h1>Enter a new student</h1>

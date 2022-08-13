@@ -1,12 +1,11 @@
-import './CoursesScreen.css';
-import { selectCourse } from '../../slice/basketSlice';
-import EditCoursesModal from './EditCoursesModal';
+import EditQuartersModal from './EditQuartersModal';
+import { selectQuarter } from '../../slice/basketSlice';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
 
-const TableCourses = () => {
-  const [courses] = useSelector(selectCourse);
-  const [openModal, setOpenModal] = useState(false);
+const TableQuarters = () => {
+  const [quarters] = useSelector(selectQuarter);
+  const [isShow, setIsShow] = useState(false);
   const [selectDesc, setSelectDesc] = useState('');
   const [selectId, setSelectId] = useState('');
 
@@ -21,20 +20,23 @@ const TableCourses = () => {
 
   return (
     <div className='table-courses'>
-      <h2>List of all Courses</h2>
-      {courses?.map((courseDetails) => (
-        <div className='courses-details' key={courseDetails?._id}>
+      <h2>List of all quarters</h2>
+      {quarters?.map((quarterDetails) => (
+        <div className='courses-details' key={quarterDetails?._id}>
           <p>
-            ID:<span>{courseDetails?._id}</span>
+            ID:<span>{quarterDetails?._id}</span>
           </p>
           <p>
-            Name:<span>{courseDetails?.desc}</span>
+            Name:<span>{quarterDetails?.desc}</span>
           </p>
           <div>
             <button
               onClick={() => {
-                actions({ id: courseDetails?._id, desc: courseDetails?.desc }),
-                  setOpenModal(!openModal);
+                actions({
+                  id: quarterDetails?._id,
+                  desc: quarterDetails?.desc,
+                }),
+                  setIsShow(!isShow);
               }}
             >
               Edit
@@ -42,9 +44,9 @@ const TableCourses = () => {
           </div>
         </div>
       ))}
-      <EditCoursesModal
-        openModal={openModal}
-        setOpenModal={setOpenModal}
+      <EditQuartersModal
+        isShow={isShow}
+        setIsShow={setIsShow}
         id={selectId}
         desc={selectDesc}
         setSelectDesc={setSelectDesc}
@@ -54,4 +56,4 @@ const TableCourses = () => {
   );
 };
 
-export default TableCourses;
+export default TableQuarters;
