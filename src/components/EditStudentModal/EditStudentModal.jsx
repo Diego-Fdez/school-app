@@ -25,6 +25,11 @@ const EditStudentModal = ({ display, setDisplay }) => {
     formState: { errors },
   } = useForm();
 
+  /**
+   * It's a function that sends a PUT request to the server, and if the request is successful, it will
+   * display a success message, and if the request is unsuccessful, it will display an error message.
+   * @returns The student object.
+   */
   const submitHandler = async ({
     studentId,
     studentName,

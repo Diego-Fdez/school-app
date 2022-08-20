@@ -82,7 +82,7 @@ const TeacherScreen = () => {
     try {
       setLoading(true);
       // API is queried
-      const result = await axiosClient(`auth/${email}`, configToken);
+      const result = await axiosClient(`auth/teacher/${email}`, configToken);
       // send the data to redux
       dispatch(teachersInfo(result.data));
       setLoading(false);
@@ -148,7 +148,7 @@ const TeacherScreen = () => {
 
   return (
     <div className='home-container'>
-      <h1>Add or remove courses to a teacher</h1>
+      <h1>Add or remove subjects to teachers</h1>
       <div className='nav-search'>
         <h5>Get teacher information</h5>
         <div>
@@ -172,14 +172,14 @@ const TeacherScreen = () => {
                 id='courseDetails'
                 onChange={(e) => setId(e.target.value)}
               >
-                <option value=''>--Select Course--</option>
+                <option value=''>--Select Subject--</option>
                 {courses?.map((courseDetail) => (
                   <option key={courseDetail._id} value={courseDetail._id}>
                     {courseDetail.desc}
                   </option>
                 ))}
               </select>
-              <button onClick={() => handleClick()}>Add Course</button>
+              <button onClick={() => handleClick()}>Add Subject</button>
             </div>
           ) : (
             ''

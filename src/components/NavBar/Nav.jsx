@@ -28,7 +28,7 @@ const Nav = () => {
             {/* if he is a teacher the nav is shown */}
             {user[0]?.userInfo.isTeacher ? (
               <li>
-                <Link to='panel'>Panel</Link>
+                <Link to='panel'>Dashboard</Link>
               </li>
             ) : null}
           </ul>

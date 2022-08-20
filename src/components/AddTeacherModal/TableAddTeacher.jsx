@@ -42,6 +42,7 @@ const TableAddTeacher = ({ teacher, id, setIsOpen }) => {
         showConfirmButton: false,
         timer: 1500,
       });
+      /* It's adding the teacher to the student's list of teachers. */
       dispatch(
         addTeacher({
           _id: teacher._id,
@@ -71,7 +72,7 @@ const TableAddTeacher = ({ teacher, id, setIsOpen }) => {
             <div className='box'>
               <div className='content'>
                 <h3>{`${teacher?.userName} ${teacher?.firstName}`}</h3>
-                <p>Courses:</p>
+                <p>Subjects:</p>
                 {teacher?.courses.map((courses) => (
                   <span key={courses._id}>{courses.desc}</span>
                 ))}

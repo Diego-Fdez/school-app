@@ -11,6 +11,8 @@ import Quarters from './pages/Quarters';
 import Teachers from './pages/Teachers';
 import RegisterResult from './pages/RegisterResult';
 import Section from './pages/Section';
+import Students from './pages/Students';
+import TeacherList from './pages/TeacherList';
 import { selectUser } from './slice/basketSlice';
 import { useSelector } from 'react-redux';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
@@ -73,10 +75,26 @@ function App() {
             }
           />
           <Route
+            path='teachers'
+            element={
+              user[0]?.userInfo?.isAdmin ? <TeacherList /> : <Navigate to='/' />
+            }
+          />
+          <Route
             path='results-student'
             element={
               user[0]?.userInfo?.isAdmin || user[0]?.userInfo?.isTeacher ? (
                 <RegisterResult />
+              ) : (
+                <Navigate to='/' />
+              )
+            }
+          />
+          <Route
+            path='students'
+            element={
+              user[0]?.userInfo?.isAdmin || user[0]?.userInfo?.isTeacher ? (
+                <Students />
               ) : (
                 <Navigate to='/' />
               )

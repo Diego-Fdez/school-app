@@ -30,7 +30,7 @@ const HomeScreen = () => {
     try {
       setLoading(true);
       // API is queried
-      const result = await axiosClient(`student/${studentId}`);
+      const result = await axiosClient(`student/student/${studentId}`);
       // send the data to redux
       dispatch(studentInfo(result.data));
       setLoading(false);
@@ -51,9 +51,9 @@ const HomeScreen = () => {
     <div className='home-container'>
       <EditStudentModal display={display} setDisplay={setDisplay} />
       <AddTeacherModal isOpen={isOpen} setIsOpen={setIsOpen} />
-      <h1>Grades</h1>
+      <h1>Get the student details</h1>
       <div className='nav-search'>
-        <h5>Get student averages</h5>
+        <h5>Search the student:</h5>
         <div>
           <input
             type='search'

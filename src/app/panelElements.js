@@ -9,7 +9,7 @@ export const elements = [
     id: 2,
     icon: 'https://st.depositphotos.com/1076214/1348/i/450/depositphotos_13488387-stock-photo-group-of-happy-young-graduates.jpg',
     title: 'All students',
-    go: '/',
+    go: 'students',
   },
   {
     id: 3,
@@ -20,13 +20,13 @@ export const elements = [
   {
     id: 4,
     icon: 'https://st.depositphotos.com/1003924/2531/i/450/depositphotos_25319407-stock-photo-register-key-concept.jpg',
-    title: 'Register/Edit course',
+    title: 'Register/Edit subjects',
     go: 'courses',
   },
   {
     id: 5,
     icon: 'https://images.pexels.com/photos/1148399/pexels-photo-1148399.jpeg?auto=compress&cs=tinysrgb&w=600',
-    title: 'Assign/Delete courses to instructors',
+    title: 'Assign/Delete subjects to teachers',
     go: 'teacher',
   },
   {
@@ -45,6 +45,6 @@ export const elements = [
     id: 8,
     icon: 'https://st.depositphotos.com/1043073/3375/i/450/depositphotos_33752261-stock-photo-teacher-draw.jpg',
     title: 'All teachers',
-    go: '/',
+    go: 'teachers',
   },
 ];

@@ -96,7 +96,7 @@ const TableScreen = () => {
                 </span>
               ))}
               <div>
-                <Link to={`results-student/${student._id}`}>See grades</Link>
+                <Link to={`results-student/${student._id}`}>See scores</Link>
               </div>
             </div>
           </div>

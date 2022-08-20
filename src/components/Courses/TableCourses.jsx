@@ -21,7 +21,7 @@ const TableCourses = () => {
 
   return (
     <div className='table-courses'>
-      <h2>List of all Courses</h2>
+      <h2>List of all Subjects</h2>
       {courses?.map((courseDetails) => (
         <div className='courses-details' key={courseDetails?._id}>
           <p>

@@ -67,14 +67,14 @@ const CoursesScreen = ({ createCourses }) => {
 
   return (
     <div className='courses-container'>
-      <h1>Register a new Course</h1>
+      <h1>Register a new subject</h1>
       <div>
         {/* It's a ternary operator that checks if the courses array has a length greater than 0, if it
         is, it will not display anything, if it is not, it will display the button. */}
         {courses?.length > 0 ? (
           ''
         ) : (
-          <button onClick={() => handleClick()}>Show all courses</button>
+          <button onClick={() => handleClick()}>Show all subjects</button>
         )}
       </div>
       <form
@@ -82,17 +82,17 @@ const CoursesScreen = ({ createCourses }) => {
         className='infoForm authForm'
       >
         <fieldset>
-          <legend>Course name:</legend>
+          <legend>Name of the subject:</legend>
           <div>
             <input
               type='text'
-              placeholder='Course Name'
+              placeholder='Name of the subject'
               className='infoInput'
               name='desc'
               id='desc'
               autoFocus
               {...register('desc', {
-                required: 'Please enter the course name',
+                required: 'Please enter the name of the subject',
               })}
             />
             {/* Checking if there is an error in the form, and if there is, it will display the error

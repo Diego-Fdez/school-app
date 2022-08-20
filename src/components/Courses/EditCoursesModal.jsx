@@ -70,7 +70,7 @@ const EditCoursesModal = ({
         }}
       >
         <div className='modal courses-modal'>
-          <h1>Edit the selected course</h1>
+          <h1>Edit the selected subject</h1>
 
           <a className='link-2' onClick={() => setOpenModal(!openModal)}></a>
           <div>
@@ -78,7 +78,7 @@ const EditCoursesModal = ({
               type='text'
               id='desc'
               name='desc'
-              placeholder='Course name'
+              placeholder='Name of the subject'
               defaultValue={desc}
               onChange={(e) => setSelectDesc(e.target.value)}
             />

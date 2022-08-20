@@ -20,7 +20,7 @@ const TableQuarters = () => {
 
   return (
     <div className='table-courses'>
-      <h2>List of all quarters</h2>
+      <h2>List of all Periods</h2>
       {quarters?.map((quarterDetails) => (
         <div className='courses-details' key={quarterDetails?._id}>
           <p>

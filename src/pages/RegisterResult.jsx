@@ -20,7 +20,7 @@ const RegisterResult = () => {
     try {
       setLoading(true);
       // API is queried
-      const result = await axiosClient(`student/${studentId}`);
+      const result = await axiosClient(`student/student/${studentId}`);
       // send the data to redux
       dispatch(studentInfo(result.data));
       setLoading(false);

@@ -63,7 +63,7 @@ const EditQuartersModal = ({ isShow, setIsShow, id, setSelectDesc, desc }) => {
         }}
       >
         <div className='modal courses-modal'>
-          <h1>Edit the selected level</h1>
+          <h1>Edit the selected period</h1>
 
           <a className='link-2' onClick={() => setIsShow(!isShow)}></a>
           <div>
@@ -71,7 +71,7 @@ const EditQuartersModal = ({ isShow, setIsShow, id, setSelectDesc, desc }) => {
               type='text'
               id='desc'
               name='desc'
-              placeholder='Level description'
+              placeholder='Period description'
               defaultValue={desc}
               onChange={(e) => setSelectDesc(e.target.value)}
             />

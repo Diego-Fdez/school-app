@@ -1,4 +1,5 @@
 import EditResultModal from './EditResultModal';
+import { formatDate } from '../../helper/formatDate';
 import { selectQtResult, selectUser } from '../../slice/basketSlice';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
@@ -14,9 +15,7 @@ const QtResTable = () => {
       {qtResults?.map((studentDetail) => (
         <div className='result-card' key={studentDetail?._id}>
           <div className='result-wrapper'>
-            <h4>
-              Date: <span>27/04/2022</span>
-            </h4>
+            <h4>{formatDate(studentDetail?.createdAt)}</h4>
             <div>
               <span>Course:</span>
               <span>{studentDetail?.course.desc}</span>
@@ -26,25 +25,27 @@ const QtResTable = () => {
               <span>{`${studentDetail?.studentId?.studentName} ${studentDetail?.studentId?.studentFirstName} ${studentDetail?.studentId?.studentLastName}`}</span>
             </div>
             <div>
-              <span>Quarter:</span>
+              <span>Period:</span>
               <span>{studentDetail?.quarter?.desc}</span>
             </div>
             <div>
               <span>First Test:</span>
-              <span>{studentDetail?.test1 ? studentDetail.test1 : 'Soon'}</span>
+              <span>
+                {studentDetail?.test1 ? studentDetail.test1 : 'in progress'}
+              </span>
             </div>
             <div>
               <span>Percentage:</span>
               <span>
                 {studentDetail?.perTest1
                   ? studentDetail.perTest1 + '%'
-                  : 'Soon'}
+                  : 'in progress'}
               </span>
             </div>
             <div>
               <span>Second Test:</span>
               <span>
-                {studentDetail?.test2 ? studentDetail?.test2 : 'Soon'}
+                {studentDetail?.test2 ? studentDetail?.test2 : 'in progress'}
               </span>
             </div>
             <div>
@@ -52,13 +53,15 @@ const QtResTable = () => {
               <span>
                 {studentDetail?.perTest2
                   ? studentDetail?.perTest2 + '%'
-                  : 'Soon'}
+                  : 'in progress'}
               </span>
             </div>
             <div>
               <span>Assists:</span>
               <span>
-                {studentDetail?.assists ? studentDetail?.assists + '%' : 'Soon'}
+                {studentDetail?.assists
+                  ? studentDetail?.assists + '%'
+                  : 'in progress'}
               </span>
             </div>
             <div>
@@ -66,7 +69,7 @@ const QtResTable = () => {
               <span>
                 {studentDetail?.homework
                   ? studentDetail?.homework + '%'
-                  : 'Soon'}
+                  : 'in progress'}
               </span>
             </div>
             <div>
@@ -74,8 +77,13 @@ const QtResTable = () => {
               <span>{studentDetail?.level?.desc}</span>
             </div>
             <div>
-              <span>Condition:</span>
-              <span>Approved</span>
+              <span>Total:</span>
+              <span>
+                {(studentDetail.perTest1 ? studentDetail.perTest1 : 0) +
+                  (studentDetail.perTest2 ? studentDetail.perTest2 : 0) +
+                  (studentDetail.homework ? studentDetail.homework : 0) +
+                  (studentDetail.assists ? studentDetail.assists : 0)}
+              </span>
             </div>
             {user[0]?.userInfo?.isAdmin ? (
               <div className='card-button'>

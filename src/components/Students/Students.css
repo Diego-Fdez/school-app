@@ -1,9 +1,10 @@
 .assists-container {
   display: flex;
   flex-direction: column;
-  width: 75%;
+  width: 80%;
   place-items: center;
   margin: 0 auto;
+  margin-top: 1.5rem;
 }
 
 .assists-header {
@@ -21,15 +22,16 @@
   border-radius: 1rem;
   width: fit-content;
   overflow: hidden;
+  margin-top: 1rem;
 }
 
 .assists-table {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   background-color: #2a2b2f;
   gap: 1rem;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   -webkit-box-shadow: 10px 10px 24px 4px rgba(0, 0, 0, 0.18);
   -moz-box-shadow: 10px 10px 24px 4px rgba(0, 0, 0, 0.18);
   box-shadow: 10px 10px 24px 4px rgba(0, 0, 0, 0.18);
@@ -49,7 +51,22 @@
 }
 
 .assists-name > p:nth-child(2) {
-  font-size: 0.75rem;
   font-weight: normal;
   color: #ccc;
+}
+
+.assists-present > p:nth-child(2) {
+  font-weight: normal;
+  color: #ccc;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  .assists-name > p:nth-child(2) {
+    font-size: 0.7rem;
+  }
+
+  .assists-present > p:nth-child(2) {
+    font-size: 0.7rem;
+  }
 }

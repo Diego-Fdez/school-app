@@ -31,7 +31,7 @@ const AddTeacherModal = ({ isOpen, setIsOpen }) => {
           Authorization: `Bearer ${token}`,
         },
       };
-      const result = await axiosClient(`auth/${email}`, configToken);
+      const result = await axiosClient(`auth/teacher/${email}`, configToken);
       setTeacher(result.data);
       setEmail('');
       setLoading(false);

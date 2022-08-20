@@ -44,16 +44,18 @@ const QtResByStudent = () => {
   }, [qtResults]);
 
   return (
-    <div className='result'>
-      <h1>Results per quarter</h1>
-      {loading ? (
-        <Loader />
-      ) : (
-        <div className='result-container'>
-          <QtResTable />
-        </div>
-      )}
-    </div>
+    <>
+      <div className='result'>
+        <h1>Results per period</h1>
+        {loading ? (
+          <Loader />
+        ) : (
+          <div className='result-container'>
+            <QtResTable />
+          </div>
+        )}
+      </div>
+    </>
   );
 };
 

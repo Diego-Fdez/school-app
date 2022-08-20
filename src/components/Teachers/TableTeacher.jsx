@@ -78,7 +78,7 @@ const TableTeacher = () => {
             <div className='content'>
               <h3>{`${teacher?.userName} ${teacher?.firstName}`}</h3>
               <p>{teacher?.email}</p>
-              <p>Assigned Courses:</p>
+              <p>Assigned subjects:</p>
               {teacher?.courses?.map((course) => (
                 <span key={course?._id}>
                   {`${course?.desc}`}{' '}

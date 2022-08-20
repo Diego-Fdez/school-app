@@ -126,6 +126,7 @@ const RegisterResultScreen = ({ modal, quarterSelected }) => {
     }
   };
 
+  /* It's a hook that is executed when the component is mounted. */
   useEffect(() => {
     if (
       courses === undefined ||
@@ -243,11 +244,11 @@ const RegisterResultScreen = ({ modal, quarterSelected }) => {
             id='course'
             defaultValue={modal ? quarterSelected?.course?._id : ''}
             {...register('course', {
-              required: 'Please select a course',
+              required: 'Please select a subject',
             })}
           >
             <option value='' disabled>
-              --Select Course--
+              --Select Subject--
             </option>
             {courses?.map((course) => (
               <option
@@ -268,10 +269,10 @@ const RegisterResultScreen = ({ modal, quarterSelected }) => {
             id='quarter'
             defaultValue={modal ? quarterSelected?.quarter?._id : ''}
             {...register('quarter', {
-              required: 'Please select a quarter',
+              required: 'Please select a period',
             })}
           >
-            <option value=''>--Select Quarter--</option>
+            <option value=''>--Select Period--</option>
             {quarters?.map((quarter) => (
               <option
                 key={quarter._id}
@@ -291,7 +292,7 @@ const RegisterResultScreen = ({ modal, quarterSelected }) => {
           <input
             type='number'
             className='infoInput'
-            placeholder='first trimester note'
+            placeholder='first period score'
             name='test1'
             id='test1'
             {...register('test1')}
@@ -300,7 +301,7 @@ const RegisterResultScreen = ({ modal, quarterSelected }) => {
           <input
             type='number'
             className='infoInput'
-            placeholder='First quarter grade percentage'
+            placeholder='Percentage of the first period'
             name='perTest1'
             id='perTest1'
             {...register('perTest1')}
@@ -311,7 +312,7 @@ const RegisterResultScreen = ({ modal, quarterSelected }) => {
           <input
             type='number'
             className='infoInput'
-            placeholder='Second trimester note'
+            placeholder='Second period score'
             name='test2'
             id='test2'
             {...register('test2')}
@@ -320,7 +321,7 @@ const RegisterResultScreen = ({ modal, quarterSelected }) => {
           <input
             type='number'
             className='infoInput'
-            placeholder='Second quarter grade percentage'
+            placeholder='Percentage of the first period'
             name='perTest2'
             id='perTest2'
             {...register('perTest2')}

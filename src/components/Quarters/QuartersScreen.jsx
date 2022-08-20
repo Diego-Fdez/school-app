@@ -71,12 +71,12 @@ const QuartersScreen = ({ createNewQuarter }) => {
 
   return (
     <div className='quarter-container'>
-      <h1>Register a new quarter</h1>
+      <h1>Register a new period</h1>
       {quarters?.length > 0 ? (
         ''
       ) : (
         <div>
-          <button onClick={() => handleClick()}>Show all Quarters</button>
+          <button onClick={() => handleClick()}>Show all Periods</button>
         </div>
       )}
       <form
@@ -84,17 +84,17 @@ const QuartersScreen = ({ createNewQuarter }) => {
         onSubmit={handleSubmit(submitHandler)}
       >
         <fieldset>
-          <legend>Quarter description:</legend>
+          <legend>Period description:</legend>
           <div>
             <input
               type='text'
-              placeholder='Quarter Description'
+              placeholder='Period Description'
               className='infoInput'
               name='desc'
               id='desc'
               autoFocus
               {...register('desc', {
-                required: 'Please enter the quarter description',
+                required: 'Please enter the period description',
               })}
             />
             {/* Checking if there is an error in the form, and if there is, it will display the error
