@@ -184,9 +184,9 @@ const AuthScreen = () => {
                     name='confirmPassword'
                     id='confirmPassword'
                     {...register('confirmPassword', {
-                      required: 'Por favor confirme la contraseña',
+                      required: 'Please confirm the password',
                       validate: (value) =>
-                        value === password || 'Las contraseñas no coinciden',
+                        value === password || 'Passwords do not match',
                     })}
                   />
                 )}
