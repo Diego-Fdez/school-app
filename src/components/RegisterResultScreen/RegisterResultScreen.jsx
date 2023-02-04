@@ -254,7 +254,7 @@ const RegisterResultScreen = ({ modal, quarterSelected }) => {
               <option
                 key={course._id}
                 value={course._id}
-                selected={quarterSelected?.course?._id === course._id}
+                defaultValue={quarterSelected?.course?._id === course._id}
               >
                 {course.desc}
               </option>
@@ -277,7 +277,7 @@ const RegisterResultScreen = ({ modal, quarterSelected }) => {
               <option
                 key={quarter._id}
                 value={quarter._id}
-                selected={quarterSelected?.quarter?._id === quarter._id}
+                defaultValue={quarterSelected?.quarter?._id === quarter._id}
               >
                 {quarter.desc}
               </option>
@@ -360,7 +360,7 @@ const RegisterResultScreen = ({ modal, quarterSelected }) => {
               <option
                 key={level._id}
                 value={level._id}
-                selected={quarterSelected?.level?._id === level._id}
+                defaultValue={quarterSelected?.level?._id === level._id}
               >
                 {level.desc}
               </option>
