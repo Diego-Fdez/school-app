@@ -48,9 +48,23 @@ const QtResByStudent = () => {
         {loading ? (
           <Loader />
         ) : (
-          <div className='result-container'>
-            <QtResTable />
-          </div>
+          <>
+            {qtResults?.length === 0 ? (
+              <div className='no-results-container'>
+                <h2>
+                  There are no recorded averages for the selected student.
+                </h2>
+                <img
+                  src='../src/assets/undraw_Result.png'
+                  alt='undraw-result-image'
+                />
+              </div>
+            ) : (
+              <div className='result-container'>
+                <QtResTable />
+              </div>
+            )}
+          </>
         )}
       </div>
     </>
