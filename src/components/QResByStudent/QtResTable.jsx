@@ -2,17 +2,23 @@ import EditResultModal from './EditResultModal';
 import { formatDate } from '../../helper/formatDate';
 import { selectQtResult, selectUser } from '../../slice/basketSlice';
 import { useSelector } from 'react-redux';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const QtResTable = () => {
   const [qtResults] = useSelector(selectQtResult);
   const user = useSelector(selectUser);
   const [modal, setModal] = useState(false);
   const [quarterSelected, setQuarterSelected] = useState([]);
+  const [studentResults, setStudentResults] = useState([]);
+
+  /* Setting the state of studentResults to qtResults. */
+  useEffect(() => {
+    setStudentResults(qtResults);
+  });
 
   return (
     <>
-      {qtResults?.map((studentDetail) => (
+      {studentResults?.map((studentDetail) => (
         <div className='result-card' key={studentDetail?._id}>
           <div className='result-wrapper'>
             <h4>{formatDate(studentDetail?.createdAt)}</h4>
