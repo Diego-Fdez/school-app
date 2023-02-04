@@ -66,6 +66,7 @@ const AddTeacherModal = ({ isOpen, setIsOpen }) => {
               <div>
                 <input
                   type='search'
+                  placeholder='Teacher&#8242;s email'
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
