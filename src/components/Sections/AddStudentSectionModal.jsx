@@ -43,8 +43,9 @@ const AddStudentSectionModal = ({ hasModal, setHasModal }) => {
         showConfirmButton: false,
         timer: 1500,
       });
-      console.log(result);
       dispatch(addStudentSection(result.data.student));
+      setStudentId('');
+      setHasModal(!hasModal);
     } catch (error) {
       Swal.fire({
         position: 'top-end',
