@@ -134,7 +134,6 @@ const TeacherScreen = () => {
           id: id,
         })
       );
-      setId('');
     } catch (error) {
       Swal.fire({
         position: 'top-end',
