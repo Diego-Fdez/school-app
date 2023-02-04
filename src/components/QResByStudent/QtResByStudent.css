@@ -14,6 +14,17 @@
   margin: auto;
 }
 
+.no-results-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2.6rem;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  font-size: 0.5rem;
+  color: #d9d9d9;
+}
+
 .result-container {
   display: grid;
   grid-auto-rows: auto;
@@ -115,6 +126,10 @@
 @media (min-width: 769px) {
   .result-container {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .no-results-container {
+    font-size: 1.2rem;
   }
 }
 

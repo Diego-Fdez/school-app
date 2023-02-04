@@ -38,10 +38,8 @@ const QtResByStudent = () => {
   };
 
   useEffect(() => {
-    if (qtResults === undefined) {
-      getResult();
-    }
-  }, [qtResults]);
+    getResult();
+  }, []);
 
   return (
     <>
