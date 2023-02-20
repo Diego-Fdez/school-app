@@ -13,6 +13,7 @@ import RegisterResult from './pages/RegisterResult';
 import Section from './pages/Section';
 import Students from './pages/Students';
 import TeacherList from './pages/TeacherList';
+import { ErrorPage } from './pages/ErrorPage';
 import { selectUser } from './slice/basketSlice';
 import { useSelector } from 'react-redux';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
@@ -110,6 +111,7 @@ function App() {
             path='results-student/:studentId'
             element={<QtResByStudent />}
           />
+          <Route path='/:rest*' element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>
     </div>
