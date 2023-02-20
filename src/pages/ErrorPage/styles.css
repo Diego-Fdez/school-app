@@ -1,0 +1,37 @@
+.App-wrapper {
+  width: 100%;
+  max-width: 90rem;
+  margin: 0 auto;
+  padding: 0 0.5em;
+}
+
+.pageErrorStyles {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  text-align: center;
+}
+
+.codeErrorStyles {
+  font-size: 5rem;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.msgErrorStyles {
+  font-size: 1.5rem;
+  margin: 1rem auto;
+}
+
+.gifErrorStyles {
+  margin: '1rem auto';
+  width: 350px;
+  height: 350px;
+  object-fit: 'cover';
+}
+
+.btn-error-page {
+  margin-top: 2rem;
+}
