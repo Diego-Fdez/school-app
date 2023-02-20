@@ -32,6 +32,7 @@ const RegisterResultScreen = ({ modal, quarterSelected }) => {
     handleSubmit,
     register,
     formState: { errors },
+    reset,
   } = useForm();
 
   /**
@@ -212,7 +213,7 @@ const RegisterResultScreen = ({ modal, quarterSelected }) => {
         });
         dispatch(createQuarterResult(result.data.data));
       }
-
+      reset();
       setLoading(false);
     } catch (error) {
       Swal.fire({
